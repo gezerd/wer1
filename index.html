@@ -1,0 +1,139 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>WeR1 Hoops</title>
+	<link rel="stylesheet" href="main.css" />
+	<link href="https://fonts.googleapis.com/css?family=Overpass|Roboto|Roboto+Condensed" rel="stylesheet">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+</head>
+<body>
+	<header id="header">
+		<a id="logo-pic" href="index.html"><img src="images/WE-R1.jpg" /></a>
+		<div class="inner">
+			<a href="index.html" class="logo">WE-R1 Hoops</a>
+			<nav id="nav">
+				<a href="index.html">Home</a>
+				<a href="about.html">About Us</a>
+				<a href="schedule.html">Schedule</a>
+			</nav>
+		</div>
+	</header>
+	<div id="slideshow">
+		<img class="mySlides fade" src="images/slide1.jpg" />
+		<img class="mySlides fade" src="images/slide2.jpg" />
+		<img class="mySlides fade" src="images/slide3.jpg" />
+		<img class="mySlides fade" src="images/slide4.jpg" />
+		<img class="mySlides fade" src="images/shootout.png" />
+		<img class="mySlides fade" src="images/schedule.png" />
+		
+		<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+		<a class="next" onclick="plusSlides(1)">&#10095;</a>
+	</div>
+	<div id="slides" style="text-align:center">
+		<span class="dot" onclick="currentSlide(1)"></span> 
+		<span class="dot" onclick="currentSlide(2)"></span> 
+		<span class="dot" onclick="currentSlide(3)"></span> 
+		<span class="dot" onclick="currentSlide(4)"></span>
+		<span class="dot" onclick="currentSlide(5)"></span>
+		<span class="dot" onclick="currentSlide(6)"></span>
+	</div>
+	<div id="home">
+		<section id="program">
+			<div class="inner">
+				<h1>Program</h1>
+			</div>
+			<div class="one">
+				<div class="text">
+					<p>The WE-R1 basketball program is geared towards tournament and advanced players. Player and team development is a priority. We teach this through hard work and commitment. The program's monthly fee includes: </p>
+					<ul class="fa-ul">
+						<li>
+							<span class="fa-li"><i class="fas fa-basketball-ball"></i></span>
+							Four training days per month
+						</li>
+						<li>
+							<span class="fa-li"><i class="fas fa-basketball-ball"></i></span>
+							Four team/division practices per month
+						</li>
+						<li>
+							<span class="fa-li"><i class="fas fa-basketball-ball"></i></span>
+							One tournament per month
+						</li>
+						<li>
+							<span class="fa-li"><i class="fas fa-basketball-ball"></i></span>
+							Optional additional tournaments may be scheduled
+						</li>		
+					</ul>
+					<p>For more information, check out <a href="images/program.pdf" download>this document</a>.</p>
+				</div>
+				<div class="icon-container">
+					<img class="icon" src="images/program.jpg" />
+				</div>
+			</div>
+		</section>
+		<section id="events">
+			<div class="inner">
+				<h1>Events</h1>
+			</div>
+			<div class="one">
+				<div class="icon-container">
+					<img class="icon" src="images/shootout.png" />
+				</div>
+			</div>
+		</section>
+	</div>
+	<footer id="footer">
+		<section id="contact">
+			<a href="http://www.instagram.com/we_r1hoops/" target="_blank">
+				<span id="instagram">
+					<i class="fab fa-instagram"></i>
+				</span>
+			</a>
+			<p>Contact Us!</p>
+			<p>Email: <a class="email" href="mailto:wer1hoops@gmail.com">wer1hoops@gmail.com</a></p>
+		</section>
+		<section id="navlinks">
+			<a href="index.html">Home</a><span>|</span>
+			<a href="about.html">About Us</a><span>|</span>
+			<a href="schedule.html">Schedule</a>
+		</section>
+	</footer>
+
+
+	<script>
+		var slideIndex = 1;
+		showSlides(slideIndex);
+		var timer = setInterval(function() {plusSlides(1);}, 4000);
+
+		function resetInterval() {
+			clearInterval(timer);
+			timer = setInterval(function() {plusSlides(1);}, 4000);
+		}
+
+		function plusSlides(n) {
+			showSlides(slideIndex += n);
+			resetInterval();
+		}
+
+		function currentSlide(n) {
+			showSlides(slideIndex = n);
+			resetInterval();
+		}
+
+		function showSlides(n) {
+			var i;
+			var slides = document.getElementsByClassName("mySlides");
+			var dots = document.getElementsByClassName("dot");
+			if (n > slides.length) {slideIndex = 1}    
+			if (n < 1) {slideIndex = slides.length}
+			for (i = 0; i < slides.length; i++) {
+				slides[i].style.display = "none";  
+			}
+			for (i = 0; i < dots.length; i++) {
+				dots[i].className = dots[i].className.replace(" active", "");
+			}
+			slides[slideIndex-1].style.display = "block";  
+			dots[slideIndex-1].className += " active";
+		}
+	</script>
+</body>
+</html>
